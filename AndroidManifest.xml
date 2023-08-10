@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="10" android:versionName="3.01" android:installLocation="auto" android:compileSdkVersion="30" android:compileSdkVersionCodename="11" package="com.aniflix.app" platformBuildVersionCode="30" platformBuildVersionName="11">
+	<uses-sdk android:minSdkVersion="19" android:targetSdkVersion="30" />
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+	<uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+	<queries>
+		<intent>
+			<action android:name="android.intent.action.TTS_SERVICE" />
+		</intent>
+		<package android:name="com.whatsapp" />
+		<package android:name="com.whatsapp.w4b" />
+		<intent>
+			<action android:name="android.intent.action.VIEW" />
+			<category android:name="android.intent.category.BROWSABLE" />
+			<data android:scheme="https" />
+		</intent>
+		<intent>
+			<action android:name="android.support.customtabs.action.CustomTabsService" />
+		</intent>
+		<package android:name="com.facebook.katana" />
+		<intent>
+			<action android:name="android.intent.action.MAIN" />
+		</intent>
+	</queries>
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<application android:theme="resourceId:0x7f120008" android:label="AniFLIX" android:icon="res/wI.png" android:name="com.aniflix.app.config" android:allowBackup="false" android:supportsRtl="true" android:fullBackupContent="false" android:usesCleartextTraffic="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory">
+		<meta-data android:name="com.google.android.gms.version" android:value="12451000" />
+		<uses-library android:name="com.google.android.maps" android:required="false" />
+		<uses-library android:name="org.apache.http.legacy" android:required="false" />
+		<meta-data android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME" android:value="com.aniflix.app.CastOptionsProvider" />
+		<meta-data android:name="android.app.default_searchable" android:value=".SearchableActivity" />
+		<provider android:name="com.aniflix.app.MySuggestionProvider" android:exported="false" android:authorities="com.aniflix.app.MySuggestionProvider" />
+		<meta-data android:name="com.google.android.gms.vision.DEPENDENCIES" android:value="barcode" />
+		<provider android:name="com.aniflix.app.StickerContentProvider" android:readPermission="com.whatsapp.sticker.READ" android:enabled="false" android:exported="true" android:authorities="com.aniflix.app.stickercontentprovider" />
+		<service android:name="com.aniflix.app.s_widget_vistafb" android:permission="android.permission.BIND_REMOTEVIEWS" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.preinicio" android:configChanges="0x4a0">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				<data android:scheme="http" android:host="www.appcreator24.com" android:pathPrefix="/open1710011-gzocbp/" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				<data android:scheme="https" android:host="www.appcreator24.com" android:pathPrefix="/open1710011-gzocbp/" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				<data android:scheme="http" android:host="join-app.net" android:pathPrefix="/a1710011-gzocbp/" />
+			</intent-filter>
+		</activity>
+		<activity android:theme="@android:style/Theme.Translucent" android:name="com.google.android.gms.ads.AdActivity" android:exported="false" android:configChanges="0xfb0" />
+		<activity android:name="com.aniflix.app.SearchableActivity" android:launchMode="singleTop">
+			<intent-filter>
+				<action android:name="android.intent.action.SEARCH" />
+			</intent-filter>
+			<meta-data android:name="android.app.searchable" android:resource="res/d9.xml" />
+		</activity>
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.ExpandedControlsActivity" android:launchMode="singleTask">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+			</intent-filter>
+		</activity>
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_qr" android:configChanges="0x4a0" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_vistafb" android:configChanges="0x4a0" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_url" android:configChanges="0x4a0" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_html" android:configChanges="0x4a0" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_video" android:configChanges="0x4a0" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_video_exoplayer" android:configChanges="0x4a0" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_video_pro" android:configChanges="0x4a0" android:windowSoftInputMode="0x20" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_radio" android:configChanges="0x4a0" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_buscchats" android:configChanges="0x4a0" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_buscchats_lista" android:configChanges="0x4a0" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_menugrid" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_submenu" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_rss" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_rssdetalle" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_oficinas" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_chat_contra" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_chat" android:configChanges="0x4a0" android:windowSoftInputMode="0x10" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.preperfil" android:configChanges="0x4a0" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.chat_perfil" android:configChanges="0x4a0" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.guardarprimeravez" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.eliminarperfil" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.codigo" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.chat" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.contactar" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_buscador_form" android:configChanges="0x4a0" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.cats" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_buscador" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_detalle" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_menu" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_mapa_web" android:configChanges="0x4a0" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_and" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.finalizar" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.notifs" android:configChanges="0x4a0" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.notifs_cats" android:configChanges="0x4a0" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.privados" android:configChanges="0x4a0" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.profile" android:configChanges="0x4a0" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.fotoperfil" android:configChanges="0x4a0" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.fotogal" android:configChanges="0x4a0" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_buscusus" android:configChanges="0x4a0" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_buscvideos" android:configChanges="0x4a0" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_buscvideo" android:configChanges="0x4a0" android:windowSoftInputMode="0x20" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_gal" android:configChanges="0x4a0" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_gal_foto" android:configChanges="0x4a0" />
+		<activity android:label="AniFLIX" android:name="com.aniflix.app.t_card" android:configChanges="0x4a0" />
+		<service android:name="com.aniflix.app.s_cargar_icos" />
+		<service android:name="com.aniflix.app.s_cargar_sliderheader" />
+		<service android:name="com.aniflix.app.s_cargar_fondo" />
+		<service android:name="com.aniflix.app.s_cargar_icos_gen" />
+		<service android:name="com.aniflix.app.s_guardarperfil" />
+		<service android:name="com.aniflix.app.s_mediaplayer_exo" />
+		<service android:name="com.aniflix.app.RegistrationIntentService" />
+		<provider android:name="com.aniflix.app.bd_provider" android:exported="false" android:multiprocess="true" android:authorities="com.aniflix.app.bd_provider" />
+		<provider android:name="androidx.core.content.FileProvider" android:exported="false" android:authorities="com.aniflix.app.fileprovider" android:grantUriPermissions="true">
+			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="res/9V.xml" />
+		</provider>
+		<receiver android:name="com.aniflix.app.alarma_rss" />
+		<service android:name="com.aniflix.app.MyFcmListenerService">
+			<intent-filter>
+				<action android:name="com.google.firebase.MESSAGING_EVENT" />
+			</intent-filter>
+		</service>
+		<service android:name="com.aniflix.app.MyInstanceIDListenerService">
+			<intent-filter>
+				<action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+			</intent-filter>
+		</service>
+		<activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.facebook.ads.AudienceNetworkActivity" android:exported="false" android:configChanges="0x4a0" android:hardwareAccelerated="true" />
+		<activity android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" android:name="com.adcolony.sdk.AdColonyInterstitialActivity" android:configChanges="0x4a0" android:hardwareAccelerated="true" />
+		<activity android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" android:name="com.adcolony.sdk.AdColonyAdViewActivity" android:configChanges="0x4a0" android:hardwareAccelerated="true" />
+		<provider android:name="com.google.android.gms.ads.MobileAdsInitProvider" android:exported="false" android:authorities="com.aniflix.app.mobileadsinitprovider" android:initOrder="100" />
+		<service android:name="com.google.android.gms.ads.AdService" android:enabled="true" android:exported="false" />
+		<provider android:name="androidx.startup.InitializationProvider" android:exported="false" android:authorities="com.aniflix.app.androidx-startup">
+			<meta-data android:name="androidx.work.WorkManagerInitializer" android:value="androidx.startup" />
+		</provider>
+		<service android:name="androidx.work.impl.background.systemalarm.SystemAlarmService" android:enabled="true" android:exported="false" android:directBootAware="false" />
+		<service android:name="androidx.work.impl.background.systemjob.SystemJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="false" android:exported="true" android:directBootAware="false" />
+		<service android:name="androidx.work.impl.foreground.SystemForegroundService" android:enabled="true" android:exported="false" android:directBootAware="false" />
+		<receiver android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver" android:enabled="true" android:exported="false" android:directBootAware="false" />
+		<receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy" android:enabled="false" android:exported="false" android:directBootAware="false">
+			<intent-filter>
+				<action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+				<action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+			</intent-filter>
+		</receiver>
+		<receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy" android:enabled="false" android:exported="false" android:directBootAware="false">
+			<intent-filter>
+				<action android:name="android.intent.action.BATTERY_OKAY" />
+				<action android:name="android.intent.action.BATTERY_LOW" />
+			</intent-filter>
+		</receiver>
+		<receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy" android:enabled="false" android:exported="false" android:directBootAware="false">
+			<intent-filter>
+				<action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+				<action android:name="android.intent.action.DEVICE_STORAGE_OK" />
+			</intent-filter>
+		</receiver>
+		<receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy" android:enabled="false" android:exported="false" android:directBootAware="false">
+			<intent-filter>
+				<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+			</intent-filter>
+		</receiver>
+		<receiver android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver" android:enabled="false" android:exported="false" android:directBootAware="false">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED" />
+				<action android:name="android.intent.action.TIME_SET" />
+				<action android:name="android.intent.action.TIMEZONE_CHANGED" />
+			</intent-filter>
+		</receiver>
+		<receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver" android:enabled="true" android:exported="false" android:directBootAware="false">
+			<intent-filter>
+				<action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
+			</intent-filter>
+		</receiver>
+		<receiver android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver" android:permission="android.permission.DUMP" android:enabled="true" android:exported="true" android:directBootAware="false">
+			<intent-filter>
+				<action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
+			</intent-filter>
+		</receiver>
+		<activity android:theme="resourceId:0x7f120334" android:name="com.facebook.FacebookActivity" android:configChanges="0x5b0" />
+		<activity android:name="com.facebook.CustomTabMainActivity" />
+		<activity android:name="com.facebook.CustomTabActivity" android:exported="true">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				<data android:scheme="fbconnect" android:host="cct.com.aniflix.app" />
+			</intent-filter>
+		</activity>
+		<receiver android:name="com.google.android.gms.cast.framework.media.MediaIntentReceiver" android:exported="false" />
+		<service android:name="com.google.android.gms.cast.framework.media.MediaNotificationService" android:exported="false" android:foregroundServiceType="0x2" />
+		<service android:name="com.google.android.gms.cast.framework.ReconnectionService" android:exported="false" />
+		<meta-data android:name="com.google.android.gms.ads.AD_MANAGER_APP" android:value="true" />
+		<activity android:name="com.ironsource.sdk.controller.ControllerActivity" android:configChanges="0x480" android:hardwareAccelerated="true" />
+		<activity android:theme="@android:style/Theme.Translucent" android:name="com.ironsource.sdk.controller.InterstitialActivity" android:configChanges="0x480" android:hardwareAccelerated="true" />
+		<activity android:theme="@android:style/Theme.Translucent" android:name="com.ironsource.sdk.controller.OpenUrlActivity" android:configChanges="0x480" android:hardwareAccelerated="true" />
+		<provider android:name="com.ironsource.lifecycle.IronsourceLifecycleProvider" android:authorities="com.aniflix.app.IronsourceLifecycleProvider" />
+		<provider android:name="com.facebook.ads.AudienceNetworkContentProvider" android:exported="false" android:authorities="com.aniflix.app.AudienceNetworkContentProvider" />
+		<receiver android:name="com.google.android.gms.measurement.AppMeasurementReceiver" android:enabled="true" android:exported="false" />
+		<service android:name="com.google.android.gms.measurement.AppMeasurementService" android:enabled="true" android:exported="false" />
+		<service android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="true" android:exported="false" />
+		<service android:name="com.google.firebase.components.ComponentDiscoveryService" android:exported="false" android:directBootAware="true">
+			<meta-data android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar" android:value="com.google.firebase.components.ComponentRegistrar" />
+			<meta-data android:name="com.google.firebase.components:com.google.firebase.iid.Registrar" android:value="com.google.firebase.components.ComponentRegistrar" />
+			<meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar" />
+		</service>
+		<service android:name="com.google.firebase.messaging.FirebaseMessagingService" android:exported="true">
+			<intent-filter android:priority="-500">
+				<action android:name="com.google.firebase.MESSAGING_EVENT" />
+			</intent-filter>
+		</service>
+		<activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:exported="false" android:excludeFromRecents="true" />
+		<service android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" android:exported="true" />
+		<receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND" android:exported="true">
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+			</intent-filter>
+		</receiver>
+		<service android:name="com.google.firebase.iid.FirebaseInstanceIdService" android:exported="true">
+			<intent-filter android:priority="-500">
+				<action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+			</intent-filter>
+		</service>
+		<activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:exported="false" />
+		<provider android:name="com.google.firebase.provider.FirebaseInitProvider" android:exported="false" android:authorities="com.aniflix.app.firebaseinitprovider" android:initOrder="100" android:directBootAware="true" />
+		<activity android:theme="@android:style/Theme.Translucent" android:name="com.startapp.sdk.adsbase.consent.ConsentActivity" android:configChanges="0x5a0" />
+		<activity android:theme="@android:style/Theme" android:name="com.startapp.sdk.ads.list3d.List3DActivity" />
+		<activity android:theme="@android:style/Theme.Translucent" android:name="com.startapp.sdk.ads.interstitials.OverlayActivity" android:configChanges="0x5a0" />
+		<service android:name="com.startapp.sdk.cachedservice.BackgroundService" />
+		<service android:name="com.startapp.sdk.jobs.SchedulerService" android:permission="android.permission.BIND_JOB_SERVICE" />
+		<receiver android:name="com.startapp.sdk.adsbase.remoteconfig.BootCompleteListener" android:exported="true">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED" />
+			</intent-filter>
+		</receiver>
+		<service android:name="androidx.room.MultiInstanceInvalidationService" android:exported="false" android:directBootAware="true" />
+		<provider android:name="com.facebook.internal.FacebookInitProvider" android:exported="false" android:authorities="com.aniflix.app.FacebookInitProvider" />
+		<receiver android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver" android:exported="false">
+			<intent-filter>
+				<action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
+			</intent-filter>
+		</receiver>
+		<service android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery" android:exported="false">
+			<meta-data android:name="backend:com.google.android.datatransport.cct.CctBackendFactory" android:value="cct" />
+		</service>
+		<service android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false" />
+		<receiver android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver" android:exported="false" />
+		<service android:name="com.appnext.core.AdsService" android:multiprocess="true" />
+		<activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.appnext.ads.interstitial.InterstitialActivity" android:multiprocess="true" android:configChanges="0x4a0" android:hardwareAccelerated="true" />
+		<activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.appnext.ads.fullscreen.FullscreenActivity" android:multiprocess="true" android:hardwareAccelerated="true" />
+		<activity android:name="com.appnext.banners.BannerActivity" android:screenOrientation="portrait" />
+		<activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.unity3d.services.ads.adunit.AdUnitActivity" android:configChanges="0x40000fff" android:hardwareAccelerated="true" />
+		<activity android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:name="com.unity3d.services.ads.adunit.AdUnitTransparentActivity" android:configChanges="0x40000fff" android:hardwareAccelerated="true" />
+		<activity android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:name="com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity" android:configChanges="0x40000fff" android:hardwareAccelerated="false" />
+		<activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.unity3d.services.ads.adunit.AdUnitSoftwareActivity" android:configChanges="0x40000fff" android:hardwareAccelerated="false" />
+		<service android:name="com.appnext.base.services.OperationService" android:enabled="true" android:exported="false" />
+		<service android:name="com.appnext.base.services.OperationJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="true" />
+		<service android:name="com.appnext.base.services.EventsJobIntentService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false" />
+		<receiver android:name="com.appnext.base.receivers.EventsReceiver" />
+		<receiver android:name="com.appnext.base.receivers.AppnextBootReciever">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED" />
+			</intent-filter>
+		</receiver>
+		<activity android:name="com.appnext.core.ResultActivity" android:excludeFromRecents="true" android:launchMode="singleTop" />
+		<activity android:name="com.appnext.core.result.ResultPageActivity" android:excludeFromRecents="true" android:launchMode="singleTop" android:screenOrientation="portrait" />
+	</application>
+</manifest>
